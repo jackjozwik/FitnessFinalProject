@@ -65,5 +65,12 @@
         <argument
             android:name="exerciseName"
             app:argType="string" />
+        <action
+            android:id="@+id/action_cardioRecyclerViewFragment_to_cardioEntryFragment"
+            app:destination="@id/cardioEntryFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/cardioEntryFragment"
+        android:name="project.st991281499.jack.CardioEntryFragment"
+        android:label="CardioEntryFragment" />
 </navigation>

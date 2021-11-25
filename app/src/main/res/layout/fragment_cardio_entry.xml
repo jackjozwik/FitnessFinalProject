@@ -23,7 +23,7 @@
             <TextView
                 android:id="@+id/duration_lbl"
                 style="@style/entry_text"
-                android:text="@string/reps" />
+                android:text="@string/duration" />
 
             <EditText
                 android:id="@+id/duration_et"
