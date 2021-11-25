@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">FitnessFinalProject</string>
+    <string name="cardio">Cardio</string>
+    <string name="strength">Strength</string>
+    <string name="reps">Reps</string>
+    <string name="sets">Sets</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="done">Done</string>
 </resources>
