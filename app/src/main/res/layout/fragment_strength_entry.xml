@@ -58,11 +58,12 @@
             android:padding="10sp">
 
             <TextView
-                android:id="@+id/date_lbl"
+                android:id="@+id/str_date_lbl"
                 style="@style/entry_text"
                 android:text="@string/date" />
 
             <DatePicker
+                android:id="@+id/str_datepicker"
                 android:layout_width="wrap_content"
                 android:layout_height="138dp"
                 android:calendarViewShown="false"
@@ -77,11 +78,12 @@
             android:padding="10sp">
 
             <TextView
-                android:id="@+id/time_lbl"
+                android:id="@+id/str_time_lbl"
                 style="@style/entry_text"
                 android:text="@string/time" />
 
             <TimePicker
+                android:id="@+id/str_timepicker"
                 android:layout_width="wrap_content"
                 android:layout_height="151dp"
                 android:layout_weight="1"
@@ -89,7 +91,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/done_btn"
+            android:id="@+id/str_done_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
