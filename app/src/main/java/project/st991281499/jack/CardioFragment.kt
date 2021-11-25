@@ -5,17 +5,49 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.ListView
+import androidx.navigation.fragment.findNavController
+import project.st991281499.jack.databinding.FragmentCardioBinding
 
 
 class CardioFragment : Fragment() {
 
+    private lateinit var binding: FragmentCardioBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cardio, container, false)
+        //view binding
+        binding = FragmentCardioBinding.inflate(layoutInflater)
+
+        //listview items
+        val exercises = listOf<String>("Jogging","Swimming","Cycling","Rowing")
+        //nav argument passed to next list
+        var exerciseType = ""
+
+        //binding listview to ui element
+        var mListView: ListView = binding.cardioListView
+
+        //adapter for listview
+        val arrayAdapter = ArrayAdapter(requireContext(), R.layout.list_card, exercises)
+        mListView.setAdapter(arrayAdapter)
+
+        //onClick navigation to next list
+        mListView.setOnItemClickListener{ parent, view, position, id ->
+            val element = (arrayAdapter.getItem(position))
+            when (element){
+                "Jogging" -> exerciseType = "Jogging"
+                "Swimming" -> exerciseType = "Swimming"
+                "Cycling" -> exerciseType = "Cycling"
+                "Rowing" -> exerciseType = "Rowing"
+            }
+            var action = CardioFragmentDirections.actionCardioFragmentToCardioRecyclerViewFragment(exerciseType)
+            findNavController().navigate(action)
+        }
+
+        return (binding.root)
     }
 
 

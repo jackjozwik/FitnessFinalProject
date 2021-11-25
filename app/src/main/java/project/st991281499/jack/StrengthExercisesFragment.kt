@@ -21,10 +21,13 @@ class StrengthExercisesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        binding = FragmentStrengthExercisesBinding.inflate(layoutInflater)
-        var exercises = arrayListOf<String>()
 
+        //view binding
+        binding = FragmentStrengthExercisesBinding.inflate(layoutInflater)
+
+        //empty list to be populated based on selection from previous listview
+        var exercises = arrayListOf<String>()
+        //nav argument passed to next list
         var exerciseType = ""
 
         when(navigationArgs.exerciseType){
@@ -34,24 +37,29 @@ class StrengthExercisesFragment : Fragment() {
             "Legs"->exercises = arrayListOf("Squats", "Leg Press")
         }
 
+        //binding listview to ui element
+        var mListView: ListView = binding.strExListView
+
+        //adapter for listview
         val arrayAdapter = ArrayAdapter(requireContext(), R.layout.list_card, exercises)
-
-        var mListView: ListView = binding.exListView
-
         mListView.setAdapter(arrayAdapter)
 
+        //onclick events for each list item
         mListView.setOnItemClickListener{ parent, view, position, id ->
             val element = (arrayAdapter.getItem(position))
             when (element){
-                "Bench Press" -> exerciseType = "Chest"
-                "Back" -> exerciseType = "Back"
-                "Arms" -> exerciseType = "Arms"
-                "Legs" -> exerciseType = "Legs"
+                "Bench Press" -> exerciseType = "Bench Press"
+                "Pec Deck" -> exerciseType = "Pec Deck"
+                "Dead Lift" -> exerciseType = "Dead Lift"
+                "Rows" -> exerciseType = "Rows"
+                "Dumbbell Curls" -> exerciseType = "Dumbbell Curls"
+                "Tricep Extensions" -> exerciseType = "Tricep Extensions"
+                "Squats" -> exerciseType = "Squats"
+                "Leg Press" -> exerciseType = "Leg Press"
             }
-            var action = StrengthExercisesFragmentDirections.actionStrengthExercisesFragmentToStrengthEntryFragment()
+            var action = StrengthExercisesFragmentDirections.actionStrengthExercisesFragmentToStrengthRecyclerViewFragment(exerciseType)
             findNavController().navigate(action)
         }
-
         return (binding.root)
     }
 

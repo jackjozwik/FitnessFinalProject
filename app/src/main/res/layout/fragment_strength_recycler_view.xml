@@ -3,15 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StrengthFragment"
-    android:orientation="vertical">
+    tools:context=".StrengthRecyclerViewFragment">
 
-    <ListView
-        android:id="@+id/str_ex_list_view"
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/strength_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:listSelector="@color/red">
-    </ListView>
-
+        />
 
 </LinearLayout>

@@ -8,32 +8,34 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import androidx.navigation.fragment.findNavController
+import project.st991281499.jack.databinding.FragmentStrengthBinding
 
 
 class StrengthFragment : Fragment() {
 
-    //private lateinit var binding: FragmentStrengthBinding
+    private lateinit var binding: FragmentStrengthBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Inflate the layout for this fragment
 
-        val view = inflater.inflate(R.layout.fragment_strength, container, false)
-        //binding = FragmentStrengthBinding.inflate(layoutInflater)
+        //view binding
+        binding = FragmentStrengthBinding.inflate(layoutInflater)
 
+        //listview items
         val exercises = listOf<String>("Chest","Back","Arms","Legs")
-        var exerciseType = "Test"
+        //nav argument passed to next list
+        var exerciseType = ""
 
-        var mListView: ListView = view.findViewById(R.id.list_view) //binding.listView
+        //binding listview to ui element
+        var mListView: ListView = binding.listView
 
+        //adapter for listview
         val arrayAdapter = ArrayAdapter(requireContext(), R.layout.list_card, exercises)
-
         mListView.setAdapter(arrayAdapter)
 
-
-
+        //onClick navigation to next list
         mListView.setOnItemClickListener{ parent, view, position, id ->
             val element = (arrayAdapter.getItem(position))
             when (element){
@@ -45,15 +47,8 @@ class StrengthFragment : Fragment() {
             var action = StrengthFragmentDirections.actionStrengthFragmentToStrengthExercisesFragment(exerciseType)
             findNavController().navigate(action)
         }
-
-        return view
+        return (binding.root)
     }
-
-//    override fun onViewCreated() {
-//        val listView = binding.listView as ListView
-//        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, listOf("Arms", "Legs", "Chest", "Back"))
-//        listView.adapter = adapter
-//    }
 
 }
 
