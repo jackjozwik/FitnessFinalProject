@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/cardioFragment">
+
+    <fragment
+        android:id="@+id/strengthFragment"
+        android:name="project.st991281499.jack.StrengthFragment"
+        android:label="fragment_strength"
+        tools:layout="@layout/fragment_strength" >
+        <action
+            android:id="@+id/action_strengthFragment_to_cardioFragment"
+            app:destination="@id/cardioFragment" />
+        <action
+            android:id="@+id/action_strengthFragment_to_strengthExercisesFragment"
+            app:destination="@id/strengthExercisesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cardioFragment"
+        android:name="project.st991281499.jack.CardioFragment"
+        android:label="fragment_cardio"
+        tools:layout="@layout/fragment_cardio" >
+        <action
+            android:id="@+id/action_cardioFragment_to_strengthFragment"
+            app:destination="@id/strengthFragment" />
+        <action
+            android:id="@+id/action_cardioFragment_to_cardioRecyclerViewFragment"
+            app:destination="@id/cardioRecyclerViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/strengthExercisesFragment"
+        android:name="project.st991281499.jack.StrengthExercisesFragment"
+        android:label="StrengthExercisesFragment" >
+        <argument
+            android:name="exerciseType"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_strengthExercisesFragment_to_strengthRecyclerViewFragment"
+            app:destination="@id/strengthRecyclerViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/strengthEntryFragment"
+        android:name="project.st991281499.jack.StrengthEntryFragment"
+        android:label="fragment_strength_entry"
+        tools:layout="@layout/fragment_strength_entry" />
+    <fragment
+        android:id="@+id/strengthRecyclerViewFragment"
+        android:name="project.st991281499.jack.StrengthRecyclerViewFragment"
+        android:label="fragment_strength_recycler_view"
+        tools:layout="@layout/fragment_strength_recycler_view" >
+        <action
+            android:id="@+id/action_strengthRecyclerViewFragment_to_strengthEntryFragment"
+            app:destination="@id/strengthEntryFragment" />
+        <argument
+            android:name="exerciseName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/cardioRecyclerViewFragment"
+        android:name="project.st991281499.jack.CardioRecyclerViewFragment"
+        android:label="fragment_cardio_recycler_view"
+        tools:layout="@layout/fragment_cardio_recycler_view" >
+        <argument
+            android:name="exerciseName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_cardioRecyclerViewFragment_to_cardioEntryFragment"
+            app:destination="@id/cardioEntryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cardioEntryFragment"
+        android:name="project.st991281499.jack.CardioEntryFragment"
+        android:label="CardioEntryFragment" />
+</navigation>
