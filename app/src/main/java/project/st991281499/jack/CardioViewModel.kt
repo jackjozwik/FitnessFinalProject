@@ -4,15 +4,38 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.asLiveData
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.launch
 import project.st991281499.jack.data.Cardio
 import project.st991281499.jack.data.CardioDAO
+import java.util.*
 
 class CardioViewModel(private val cardioDao: CardioDAO) : ViewModel() {
 
-    val allExercises: LiveData<List<Cardio>> = cardioDao.getItems().asLiveData()
+    fun addNewCardio(exerciseType: String, datetime: String, duration: String) {
+        val newCardio = getNewCardioEntry(exerciseType, datetime, duration)
+        insertCardio(newCardio)
+    }
 
-    fun retrieveItem(id: Int): LiveData<Cardio> {
-        return cardioDao.getItem(id).asLiveData()
+    private fun insertCardio(cardio: Cardio) {
+        viewModelScope.launch {
+            cardioDao.insert(cardio)
+        }
+    }
+
+    fun isEntryValid(exerciseType: String, datetime: String, duration: String): Boolean {
+        if (exerciseType.isBlank() || datetime.isBlank() || duration.isBlank()) {
+            return false
+        }
+        return true
+    }
+
+    private fun getNewCardioEntry(exerciseType: String, datetime: String, duration: String): Cardio {
+        return Cardio(
+            exerciseType = exerciseType,
+            datetime = datetime,
+            duration = duration
+        )
     }
 
 }

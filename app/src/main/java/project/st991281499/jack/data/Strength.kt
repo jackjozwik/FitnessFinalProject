@@ -12,7 +12,7 @@ data class Strength (
     val exerciseType: String,
 
     @ColumnInfo(name = "datetime")
-    val datetime: Date,
+    val datetime: String,
 
     @ColumnInfo(name = "sets")
     val sets: Int,

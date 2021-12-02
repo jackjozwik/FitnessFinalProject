@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface CardioDAO {
 
-    @Query("SELECT * from cardio ORDER BY exerciseType ASC")
+    @Query("SELECT * from cardio")
     fun getItems(): Flow<List<Cardio>>
 
     @Query("SELECT * from cardio WHERE id = :id")

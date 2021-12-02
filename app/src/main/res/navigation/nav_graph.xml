@@ -63,7 +63,7 @@
         android:label="fragment_cardio_recycler_view"
         tools:layout="@layout/fragment_cardio_recycler_view" >
         <argument
-            android:name="exerciseName"
+            android:name="exerciseType"
             app:argType="string" />
         <action
             android:id="@+id/action_cardioRecyclerViewFragment_to_cardioEntryFragment"
@@ -72,5 +72,14 @@
     <fragment
         android:id="@+id/cardioEntryFragment"
         android:name="project.st991281499.jack.CardioEntryFragment"
-        android:label="CardioEntryFragment" />
+        android:label="CardioEntryFragment">
+        <argument
+            android:name="exerciseType"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_cardioEntryFragment_to_cardioFragment"
+            app:destination="@id/cardioFragment"
+            app:popUpTo="@id/cardioFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>

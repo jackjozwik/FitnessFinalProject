@@ -3,7 +3,7 @@ package project.st991281499.jack.data
 import androidx.room.*
 import java.util.*
 
-@Entity
+@Entity(tableName = "Cardio")
 data class Cardio (
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
@@ -12,9 +12,9 @@ data class Cardio (
     val exerciseType: String,
 
     @ColumnInfo(name = "datetime")
-    val datetime: Date,
+    val datetime: String,
 
     @ColumnInfo(name = "duration")
-    val duration: Date
+    val duration: String
 
 )

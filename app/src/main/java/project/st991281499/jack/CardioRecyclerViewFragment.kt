@@ -6,12 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import project.st991281499.jack.databinding.FragmentCardioRecyclerViewBinding
 
 
 class CardioRecyclerViewFragment : Fragment() {
 
     private lateinit var binding: FragmentCardioRecyclerViewBinding
+    private val navigationArgs: CardioRecyclerViewFragmentArgs by navArgs()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -21,8 +24,9 @@ class CardioRecyclerViewFragment : Fragment() {
         binding = FragmentCardioRecyclerViewBinding.inflate(layoutInflater)
 
         //button nav to entry page
+        val exerciseType = navigationArgs.exerciseType
         binding.cardioAddButton.setOnClickListener{
-            var action = CardioRecyclerViewFragmentDirections.actionCardioRecyclerViewFragmentToCardioEntryFragment()
+            var action = CardioRecyclerViewFragmentDirections.actionCardioRecyclerViewFragmentToCardioEntryFragment(exerciseType)
             findNavController().navigate(action)
         }
         return (binding.root)

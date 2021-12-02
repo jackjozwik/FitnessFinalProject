@@ -8,12 +8,15 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import project.st991281499.jack.databinding.FragmentCardioBinding
 
 
 class CardioFragment : Fragment() {
 
+
     private lateinit var binding: FragmentCardioBinding
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
