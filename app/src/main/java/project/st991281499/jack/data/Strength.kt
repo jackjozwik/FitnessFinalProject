@@ -15,9 +15,9 @@ data class Strength (
     val datetime: String,
 
     @ColumnInfo(name = "sets")
-    val sets: Int,
+    val sets: String,
 
     @ColumnInfo(name = "reps")
-    val reps: Int
+    val reps: String
 
 )

@@ -44,7 +44,14 @@
         android:id="@+id/strengthEntryFragment"
         android:name="project.st991281499.jack.StrengthEntryFragment"
         android:label="fragment_strength_entry"
-        tools:layout="@layout/fragment_strength_entry" />
+        tools:layout="@layout/fragment_strength_entry" >
+        <argument
+            android:name="exerciseType"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_strengthEntryFragment_to_strengthFragment"
+            app:destination="@id/strengthFragment" />
+    </fragment>
     <fragment
         android:id="@+id/strengthRecyclerViewFragment"
         android:name="project.st991281499.jack.StrengthRecyclerViewFragment"
