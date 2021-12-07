@@ -1,4 +1,4 @@
-package project.st991281499.jack
+package project.st991281499.jack.ui
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -11,6 +11,7 @@ import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import project.st991281499.jack.viewmodel.StrengthViewModel
 import project.st991281499.jack.data.Strength
 import project.st991281499.jack.databinding.FragmentStrengthEntryBinding
 import java.time.LocalDateTime
@@ -24,11 +25,7 @@ class StrengthEntryFragment : Fragment() {
     lateinit var strength: Strength
     private val navigationArgs: StrengthEntryFragmentArgs by navArgs()
 
-    private val viewModel: StrengthViewModel by activityViewModels {
-        StrengthViewModelFactory(
-            (activity?.application as FitnessApplication).database.strengthDao()
-        )
-    }
+    private val viewModel: StrengthViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -63,11 +60,11 @@ class StrengthEntryFragment : Fragment() {
         val reps = binding.repsEt.text.toString()
 
         if (isEntryValid(exerciseType, datetime, sets, reps)) {
-            viewModel.addNewStrength(
-                exerciseType,
+            viewModel.insertStrengthEntry(
+                Strength(0, exerciseType,
                 datetime,
                 sets,
-                reps
+                reps)
             )
 
             val action = StrengthEntryFragmentDirections.actionStrengthEntryFragmentToStrengthFragment()

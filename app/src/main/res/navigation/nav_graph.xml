@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/strengthFragment"
-        android:name="project.st991281499.jack.StrengthFragment"
+        android:name="project.st991281499.jack.ui.StrengthFragment"
         android:label="fragment_strength"
         tools:layout="@layout/fragment_strength" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/cardioFragment"
-        android:name="project.st991281499.jack.CardioFragment"
+        android:name="project.st991281499.jack.ui.CardioFragment"
         android:label="fragment_cardio"
         tools:layout="@layout/fragment_cardio" >
         <action
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/strengthExercisesFragment"
-        android:name="project.st991281499.jack.StrengthExercisesFragment"
+        android:name="project.st991281499.jack.ui.StrengthExercisesFragment"
         android:label="StrengthExercisesFragment" >
         <argument
             android:name="exerciseType"
@@ -42,7 +42,7 @@
     </fragment>
     <fragment
         android:id="@+id/strengthEntryFragment"
-        android:name="project.st991281499.jack.StrengthEntryFragment"
+        android:name="project.st991281499.jack.ui.StrengthEntryFragment"
         android:label="fragment_strength_entry"
         tools:layout="@layout/fragment_strength_entry" >
         <argument
@@ -54,7 +54,7 @@
     </fragment>
     <fragment
         android:id="@+id/strengthRecyclerViewFragment"
-        android:name="project.st991281499.jack.StrengthRecyclerViewFragment"
+        android:name="project.st991281499.jack.ui.StrengthRecyclerViewFragment"
         android:label="fragment_strength_recycler_view"
         tools:layout="@layout/fragment_strength_recycler_view" >
         <action
@@ -66,7 +66,7 @@
     </fragment>
     <fragment
         android:id="@+id/cardioRecyclerViewFragment"
-        android:name="project.st991281499.jack.CardioRecyclerViewFragment"
+        android:name="project.st991281499.jack.ui.CardioRecyclerViewFragment"
         android:label="fragment_cardio_recycler_view"
         tools:layout="@layout/fragment_cardio_recycler_view" >
         <argument
@@ -78,7 +78,7 @@
     </fragment>
     <fragment
         android:id="@+id/cardioEntryFragment"
-        android:name="project.st991281499.jack.CardioEntryFragment"
+        android:name="project.st991281499.jack.ui.CardioEntryFragment"
         android:label="CardioEntryFragment">
         <argument
             android:name="exerciseType"

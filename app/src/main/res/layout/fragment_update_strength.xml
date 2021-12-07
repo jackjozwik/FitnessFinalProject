@@ -21,16 +21,34 @@
             android:padding="10sp">
 
             <TextView
-                android:id="@+id/duration_lbl"
+                android:id="@+id/reps_lbl"
                 style="@style/entry_text"
-                android:text="@string/duration" />
+                android:text="@string/reps" />
 
             <EditText
-                android:id="@+id/duration_et"
+                android:id="@+id/reps_et"
                 style="@style/entry_text"
                 android:inputType="number" />
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30sp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="10sp">
+
+            <TextView
+                android:id="@+id/sets_lbl"
+                style="@style/entry_text"
+                android:text="@string/sets" />
+
+            <EditText
+                android:id="@+id/sets_et"
+                style="@style/entry_text"
+                android:inputType="number" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -40,12 +58,12 @@
             android:padding="10sp">
 
             <TextView
-                android:id="@+id/cardio_date_lbl"
+                android:id="@+id/str_date_lbl"
                 style="@style/entry_text"
                 android:text="@string/date" />
 
             <DatePicker
-                android:id="@+id/cardio_datepicker"
+                android:id="@+id/str_datepicker"
                 android:layout_width="wrap_content"
                 android:layout_height="138dp"
                 android:calendarViewShown="false"
@@ -60,12 +78,12 @@
             android:padding="10sp">
 
             <TextView
-                android:id="@+id/cardio_time_lbl"
+                android:id="@+id/str_time_lbl"
                 style="@style/entry_text"
                 android:text="@string/time" />
 
             <TimePicker
-                android:id="@+id/cardio_timepicker"
+                android:id="@+id/str_timepicker"
                 android:layout_width="wrap_content"
                 android:layout_height="151dp"
                 android:layout_weight="1"
@@ -73,13 +91,13 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/cardio_done_btn"
+            android:id="@+id/str_done_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textSize="30sp"
             android:layout_margin="20sp"
-            android:text="@string/done"
+            android:text="@string/update"
             />
 
     </LinearLayout>

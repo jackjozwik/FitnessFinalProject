@@ -1,4 +1,4 @@
-package project.st991281499.jack
+package project.st991281499.jack.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import project.st991281499.jack.R
 import project.st991281499.jack.databinding.FragmentStrengthExercisesBinding
 
 

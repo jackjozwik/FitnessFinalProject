@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants">
+
+        <TextView
+            android:id="@+id/sets_lbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="5sp"
+            android:textSize="30sp"
+            android:text="@string/sets"
+            />
+        <TextView
+            android:id="@+id/sets_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/sets_lbl"
+            android:layout_margin="5sp"
+            android:textSize="30sp"
+            android:text="20"
+            />
+        <TextView
+            android:id="@+id/reps_lbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/sets_lbl"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="5sp"
+            android:textSize="30sp"
+            android:text="@string/reps"
+            />
+        <TextView
+            android:id="@+id/reps_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/sets_tv"
+            app:layout_constraintStart_toEndOf="@id/reps_lbl"
+            android:layout_margin="5sp"
+            android:textSize="30sp"
+            android:text="20"
+            />
+
+        <ImageButton
+            android:id="@+id/edit_button"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:src="@drawable/bin"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/datetime_lbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_button"
+            android:layout_margin="5sp"
+            android:text="@string/date"
+            />
+        <TextView
+            android:id="@+id/datetime_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/datetime_lbl"
+            android:layout_margin="5sp"
+            android:text="11/11/11"
+            />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package project.st991281499.jack
+package project.st991281499.jack.ui
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -8,13 +8,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
-import androidx.core.view.get
 import androidx.fragment.app.activityViewModels
 import project.st991281499.jack.data.Cardio
 import project.st991281499.jack.databinding.FragmentCardioEntryBinding
-import java.util.*
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import project.st991281499.jack.CardioViewModel
+import project.st991281499.jack.CardioViewModelFactory
+import project.st991281499.jack.FitnessApplication
 import java.time.LocalDateTime
 
 
