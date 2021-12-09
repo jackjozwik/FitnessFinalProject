@@ -31,6 +31,16 @@ class StrengthViewModel(application: Application) : AndroidViewModel(application
             repository.addStrength(strength)
         }
     }
+    fun updateStrengthEntry(strength: Strength){
+        viewModelScope.launch(Dispatchers.IO){
+            repository.updateStrength(strength)
+        }
+    }
+    fun deleteStrengthEntry(strength: Strength){
+        viewModelScope.launch(Dispatchers.IO){
+            repository.deleteStrength(strength)
+        }
+    }
 
     fun isEntryValid(exerciseType: String, datetime: String, sets: String, reps: String): Boolean {
         if (exerciseType.isBlank() || datetime.isBlank() || sets.isBlank() || reps.isBlank()) {

@@ -63,6 +63,9 @@
         <argument
             android:name="exerciseName"
             app:argType="string" />
+        <action
+            android:id="@+id/action_strengthRecyclerViewFragment_to_updateStrength"
+            app:destination="@id/updateStrength" />
     </fragment>
     <fragment
         android:id="@+id/cardioRecyclerViewFragment"
@@ -88,5 +91,28 @@
             app:destination="@id/cardioFragment"
             app:popUpTo="@id/cardioFragment"
             app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateStrength"
+        android:name="project.st991281499.jack.ui.UpdateStrengthFragment"
+        android:label="UpdateStrength" >
+        <action
+            android:id="@+id/action_updateStrength_to_strengthRecyclerViewFragment"
+            app:destination="@id/strengthRecyclerViewFragment" />
+        <argument
+            android:name="exerciseId"
+            app:argType="integer" />
+        <argument
+            android:name="sets"
+            app:argType="string" />
+        <argument
+            android:name="reps"
+            app:argType="string" />
+        <argument
+            android:name="datetime"
+            app:argType="string" />
+        <argument
+            android:name="exerciseType"
+            app:argType="string" />
     </fragment>
 </navigation>

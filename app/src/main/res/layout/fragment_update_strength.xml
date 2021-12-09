@@ -85,19 +85,28 @@
             <TimePicker
                 android:id="@+id/str_timepicker"
                 android:layout_width="wrap_content"
-                android:layout_height="151dp"
+                android:layout_height="151sp"
                 android:layout_weight="1"
                 android:timePickerMode="spinner" />
         </LinearLayout>
 
         <Button
-            android:id="@+id/str_done_btn"
+            android:id="@+id/str_update_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textSize="30sp"
-            android:layout_margin="20sp"
+            android:layout_margin="10sp"
             android:text="@string/update"
+            />
+        <Button
+            android:id="@+id/str_delete_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="30sp"
+            android:layout_margin="10sp"
+            android:text="@string/delete"
             />
 
     </LinearLayout>

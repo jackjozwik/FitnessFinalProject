@@ -2,12 +2,12 @@ package project.st991281499.jack.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import project.st991281499.jack.data.Strength
 import project.st991281499.jack.databinding.StrengthCardBinding
 
 class StrengthListAdapter(var strengthList: List<Strength>, private val onStrengthClicked: (Strength) -> Unit) : RecyclerView.Adapter<StrengthListAdapter.StrengthViewHolder>(){
+
 
 
     override fun getItemCount(): Int {
@@ -38,7 +38,8 @@ class StrengthListAdapter(var strengthList: List<Strength>, private val onStreng
                     binding.apply{
                         setsTv.text = strength.sets
                         repsTv.text = strength.reps
-                        datetimeTv.text = strength.datetime
+                        datetimeTv.text = strength.datetime.substring(0, 10) + " " + strength.datetime.substring(11, 16)
+
                     }
             }
         }

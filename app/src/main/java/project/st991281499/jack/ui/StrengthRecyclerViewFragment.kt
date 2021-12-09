@@ -35,20 +35,17 @@ class StrengthRecyclerViewFragment : Fragment() {
 
         val adapter = StrengthListAdapter(arrayListOf()) {
             val action =
-                StrengthRecyclerViewFragmentDirections.actionStrengthRecyclerViewFragmentToStrengthEntryFragment(
-                    it.id.toString()
-                )
+                StrengthRecyclerViewFragmentDirections.actionStrengthRecyclerViewFragmentToUpdateStrength(it.id, it.sets, it.reps, it.datetime, it.exerciseType)
             this.findNavController().navigate(action)
         }
 
         binding.strengthRecyclerView.adapter = adapter
 
-
         val recyclerView = binding.strengthRecyclerView
 
         val exerciseType = navigationArgs.exerciseName
 
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.layoutManager = LinearLayoutManager(this.context)
 
         viewModel.readStrength(exerciseType).observe(this.viewLifecycleOwner) { strengths ->
             strengths.let {
