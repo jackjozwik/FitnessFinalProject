@@ -3,6 +3,7 @@ package project.st991281499.jack.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import project.st991281499.jack.R
 import project.st991281499.jack.data.Strength
 import project.st991281499.jack.databinding.StrengthCardBinding
 
@@ -20,8 +21,9 @@ class StrengthListAdapter(var strengthList: List<Strength>, private val onStreng
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StrengthViewHolder {
-        return StrengthViewHolder(StrengthCardBinding.inflate(LayoutInflater.from(parent.context))
-        )
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.strength_card, parent, false)
+        val binding = StrengthCardBinding.bind(view)
+        return StrengthViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: StrengthViewHolder, position: Int) {
@@ -38,7 +40,8 @@ class StrengthListAdapter(var strengthList: List<Strength>, private val onStreng
                     binding.apply{
                         setsTv.text = strength.sets
                         repsTv.text = strength.reps
-                        datetimeTv.text = strength.datetime.substring(0, 10) + " " + strength.datetime.substring(11, 16)
+                        dateTv.text = strength.datetime.substring(0, 10)
+                        timeTv.text = strength.datetime.substring(11, 16)
 
                     }
             }

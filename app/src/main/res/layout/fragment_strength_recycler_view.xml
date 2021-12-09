@@ -14,8 +14,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:listitem="@layout/strength_card"
-        android:scrollbars="vertical"
         />
 
     <Button
@@ -26,6 +24,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="20sp"
         android:layout_weight="1"
-        android:text="+" />
+        android:text="@string/Add" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
