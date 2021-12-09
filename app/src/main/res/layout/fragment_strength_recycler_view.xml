@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".StrengthRecyclerViewFragment">
+    tools:context=".ui.StrengthRecyclerViewFragment">
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -12,7 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
     <Button
         android:id="@+id/str_add_button"
@@ -22,6 +24,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="20sp"
         android:layout_weight="1"
-        android:text="+" />
+        android:text="@string/Add" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

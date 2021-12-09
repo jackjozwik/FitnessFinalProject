@@ -1,4 +1,4 @@
-package project.st991281499.jack
+package project.st991281499.jack.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/strengthFragment"
-        android:name="project.st991281499.jack.StrengthFragment"
+        android:name="project.st991281499.jack.ui.StrengthFragment"
         android:label="fragment_strength"
         tools:layout="@layout/fragment_strength" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/cardioFragment"
-        android:name="project.st991281499.jack.CardioFragment"
+        android:name="project.st991281499.jack.ui.CardioFragment"
         android:label="fragment_cardio"
         tools:layout="@layout/fragment_cardio" >
         <action
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/strengthExercisesFragment"
-        android:name="project.st991281499.jack.StrengthExercisesFragment"
+        android:name="project.st991281499.jack.ui.StrengthExercisesFragment"
         android:label="StrengthExercisesFragment" >
         <argument
             android:name="exerciseType"
@@ -42,12 +42,19 @@
     </fragment>
     <fragment
         android:id="@+id/strengthEntryFragment"
-        android:name="project.st991281499.jack.StrengthEntryFragment"
+        android:name="project.st991281499.jack.ui.StrengthEntryFragment"
         android:label="fragment_strength_entry"
-        tools:layout="@layout/fragment_strength_entry" />
+        tools:layout="@layout/fragment_strength_entry" >
+        <argument
+            android:name="exerciseType"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_strengthEntryFragment_to_strengthFragment"
+            app:destination="@id/strengthFragment" />
+    </fragment>
     <fragment
         android:id="@+id/strengthRecyclerViewFragment"
-        android:name="project.st991281499.jack.StrengthRecyclerViewFragment"
+        android:name="project.st991281499.jack.ui.StrengthRecyclerViewFragment"
         android:label="fragment_strength_recycler_view"
         tools:layout="@layout/fragment_strength_recycler_view" >
         <action
@@ -56,10 +63,13 @@
         <argument
             android:name="exerciseName"
             app:argType="string" />
+        <action
+            android:id="@+id/action_strengthRecyclerViewFragment_to_updateStrength"
+            app:destination="@id/updateStrength" />
     </fragment>
     <fragment
         android:id="@+id/cardioRecyclerViewFragment"
-        android:name="project.st991281499.jack.CardioRecyclerViewFragment"
+        android:name="project.st991281499.jack.ui.CardioRecyclerViewFragment"
         android:label="fragment_cardio_recycler_view"
         tools:layout="@layout/fragment_cardio_recycler_view" >
         <argument
@@ -71,7 +81,7 @@
     </fragment>
     <fragment
         android:id="@+id/cardioEntryFragment"
-        android:name="project.st991281499.jack.CardioEntryFragment"
+        android:name="project.st991281499.jack.ui.CardioEntryFragment"
         android:label="CardioEntryFragment">
         <argument
             android:name="exerciseType"
@@ -82,4 +92,43 @@
             app:popUpTo="@id/cardioFragment"
             app:popUpToInclusive="true" />
     </fragment>
+    <fragment
+        android:id="@+id/updateStrength"
+        android:name="project.st991281499.jack.ui.UpdateStrengthFragment"
+        android:label="UpdateStrength" >
+        <action
+            android:id="@+id/action_updateStrength_to_strengthRecyclerViewFragment"
+            app:destination="@id/strengthRecyclerViewFragment" />
+        <argument
+            android:name="exerciseId"
+            app:argType="integer" />
+        <argument
+            android:name="sets"
+            app:argType="string" />
+        <argument
+            android:name="reps"
+            app:argType="string" />
+        <argument
+            android:name="datetime"
+            app:argType="string" />
+        <argument
+            android:name="exerciseType"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="project.st991281499.jack.ui.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+    <action
+        android:id="@+id/action_global_aboutFragment"
+        app:destination="@id/aboutFragment" />
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="project.st991281499.jack.ui.HelpFragment"
+        android:label="fragment_help"
+        tools:layout="@layout/fragment_help" />
+    <action
+        android:id="@+id/action_global_helpFragment"
+        app:destination="@id/helpFragment" />
 </navigation>

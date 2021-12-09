@@ -37,7 +37,6 @@ class CardioViewModel(private val cardioDao: CardioDAO) : ViewModel() {
             duration = duration
         )
     }
-
 }
 
 class CardioViewModelFactory(private val cardioDao: CardioDAO) : ViewModelProvider.Factory {

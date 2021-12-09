@@ -4,15 +4,20 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Semester 6/Advanced Android/Final Project/FitnessFinalProject/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Semester 6/Advanced Android/Final Project/FitnessFinalProject/app/src/main/res/layout/fragment_about.xml" value="0.33489583333333334" />
         <entry key="..\:/Semester 6/Advanced Android/Final Project/FitnessFinalProject/app/src/main/res/layout/fragment_cardio.xml" value="0.5453125" />
         <entry key="..\:/Semester 6/Advanced Android/Final Project/FitnessFinalProject/app/src/main/res/layout/fragment_cardio_entry.xml" value="0.33489583333333334" />
         <entry key="..\:/Semester 6/Advanced Android/Final Project/FitnessFinalProject/app/src/main/res/layout/fragment_cardio_recycler_view.xml" value="0.33489583333333334" />
+        <entry key="..\:/Semester 6/Advanced Android/Final Project/FitnessFinalProject/app/src/main/res/layout/fragment_help.xml" value="0.33489583333333334" />
         <entry key="..\:/Semester 6/Advanced Android/Final Project/FitnessFinalProject/app/src/main/res/layout/fragment_strength.xml" value="0.559375" />
         <entry key="..\:/Semester 6/Advanced Android/Final Project/FitnessFinalProject/app/src/main/res/layout/fragment_strength_entry.xml" value="0.559375" />
         <entry key="..\:/Semester 6/Advanced Android/Final Project/FitnessFinalProject/app/src/main/res/layout/fragment_strength_exercises.xml" value="0.559375" />
         <entry key="..\:/Semester 6/Advanced Android/Final Project/FitnessFinalProject/app/src/main/res/layout/fragment_strength_recycler_view.xml" value="0.334375" />
+        <entry key="..\:/Semester 6/Advanced Android/Final Project/FitnessFinalProject/app/src/main/res/layout/fragment_update_strength.xml" value="0.33489583333333334" />
         <entry key="..\:/Semester 6/Advanced Android/Final Project/FitnessFinalProject/app/src/main/res/layout/list_card.xml" value="0.559375" />
+        <entry key="..\:/Semester 6/Advanced Android/Final Project/FitnessFinalProject/app/src/main/res/layout/strength_card.xml" value="0.33" />
         <entry key="..\:/Semester 6/Advanced Android/Final Project/FitnessFinalProject/app/src/main/res/menu/bottom_nav_bar.xml" value="0.559375" />
+        <entry key="..\:/Semester 6/Advanced Android/Final Project/FitnessFinalProject/app/src/main/res/menu/menu.xml" value="0.33489583333333334" />
         <entry key="..\:/Users/CJJ21/Documents/Android_Adv/FitnessFinalProject/app/src/main/res/layout/fragment_cardio.xml" value="0.22" />
         <entry key="..\:/Users/CJJ21/Documents/Android_Adv/FitnessFinalProject/app/src/main/res/layout/fragment_cardio_entry.xml" value="0.11927083333333334" />
         <entry key="..\:/Users/CJJ21/Documents/Android_Adv/FitnessFinalProject/app/src/main/res/layout/fragment_cardio_recycler_view.xml" value="0.18" />
@@ -20,7 +25,7 @@
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_14_PREVIEW" project-jdk-name="14" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="14" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

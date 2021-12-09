@@ -1,4 +1,4 @@
-package project.st991281499.jack
+package project.st991281499.jack.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,30 +8,29 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
-import project.st991281499.jack.databinding.FragmentCardioBinding
+import project.st991281499.jack.R
+import project.st991281499.jack.databinding.FragmentStrengthBinding
 
 
-class CardioFragment : Fragment() {
+class StrengthFragment : Fragment() {
 
-
-    private lateinit var binding: FragmentCardioBinding
-
+    private lateinit var binding: FragmentStrengthBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+
         //view binding
-        binding = FragmentCardioBinding.inflate(layoutInflater)
+        binding = FragmentStrengthBinding.inflate(layoutInflater)
 
         //listview items
-        val exercises = listOf<String>("Jogging","Swimming","Cycling","Rowing")
+        val exercises = listOf<String>("Chest","Back","Arms","Legs")
         //nav argument passed to next list
         var exerciseType = ""
 
         //binding listview to ui element
-        var mListView: ListView = binding.cardioListView
+        var mListView: ListView = binding.listView
 
         //adapter for listview
         val arrayAdapter = ArrayAdapter(requireContext(), R.layout.list_card, exercises)
@@ -41,17 +40,16 @@ class CardioFragment : Fragment() {
         mListView.setOnItemClickListener{ parent, view, position, id ->
             val element = (arrayAdapter.getItem(position))
             when (element){
-                "Jogging" -> exerciseType = "Jogging"
-                "Swimming" -> exerciseType = "Swimming"
-                "Cycling" -> exerciseType = "Cycling"
-                "Rowing" -> exerciseType = "Rowing"
+                "Chest" -> exerciseType = "Chest"
+                "Back" -> exerciseType = "Back"
+                "Arms" -> exerciseType = "Arms"
+                "Legs" -> exerciseType = "Legs"
             }
-            var action = CardioFragmentDirections.actionCardioFragmentToCardioRecyclerViewFragment(exerciseType)
+            var action = StrengthFragmentDirections.actionStrengthFragmentToStrengthExercisesFragment(exerciseType)
             findNavController().navigate(action)
         }
-
         return (binding.root)
     }
 
-
 }
+
