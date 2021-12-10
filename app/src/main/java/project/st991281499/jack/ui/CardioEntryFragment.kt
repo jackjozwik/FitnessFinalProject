@@ -14,26 +14,24 @@ import project.st991281499.jack.databinding.FragmentCardioEntryBinding
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import project.st991281499.jack.CardioViewModel
-import project.st991281499.jack.CardioViewModelFactory
 import project.st991281499.jack.FitnessApplication
+import project.st991281499.jack.data.Strength
+import project.st991281499.jack.databinding.FragmentStrengthEntryBinding
+import project.st991281499.jack.viewmodel.StrengthViewModel
 import java.time.LocalDateTime
 
 
 class CardioEntryFragment : Fragment() {
 
-    lateinit var cardio: Cardio
-    private val navigationArgs: CardioEntryFragmentArgs by navArgs()
-
-
-    private val viewModel: CardioViewModel by activityViewModels {
-        CardioViewModelFactory(
-            (activity?.application as FitnessApplication).database
-                .cardioDao()
-        )
-    }
 
     private var _binding: FragmentCardioEntryBinding? = null
     private val binding get() = _binding!!
+
+    lateinit var cardio: Cardio
+    private val navigationArgs: CardioEntryFragmentArgs by navArgs()
+
+    private val viewModel: CardioViewModel by activityViewModels()
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -66,10 +64,12 @@ class CardioEntryFragment : Fragment() {
         val duration = binding.durationEt.text.toString()
 
         if (isEntryValid(exerciseType, dt, duration)) {
-            viewModel.addNewCardio(
-                exerciseType,
-                dt,
-                duration
+            viewModel.insertCardioEntry(
+                Cardio(
+                    0,
+                    exerciseType,
+                    dt,
+                    duration)
             )
             val action = CardioEntryFragmentDirections.actionCardioEntryFragmentToCardioFragment()
             findNavController().navigate(action)

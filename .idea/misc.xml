@@ -21,11 +21,18 @@
         <entry key="..\:/Users/CJJ21/Documents/Android_Adv/FitnessFinalProject/app/src/main/res/layout/fragment_cardio.xml" value="0.22" />
         <entry key="..\:/Users/CJJ21/Documents/Android_Adv/FitnessFinalProject/app/src/main/res/layout/fragment_cardio_entry.xml" value="0.11927083333333334" />
         <entry key="..\:/Users/CJJ21/Documents/Android_Adv/FitnessFinalProject/app/src/main/res/layout/fragment_cardio_recycler_view.xml" value="0.18" />
+        <entry key="..\:/Users/CJJ21/Documents/FitnessFinalProject/app/src/main/res/layout/cardio_card.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/CJJ21/Documents/FitnessFinalProject/app/src/main/res/layout/fragment_cardio_entry.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/CJJ21/Documents/FitnessFinalProject/app/src/main/res/layout/fragment_cardio_recycler_view.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/CJJ21/Documents/FitnessFinalProject/app/src/main/res/layout/fragment_strength_recycler_view.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/CJJ21/Documents/FitnessFinalProject/app/src/main/res/layout/fragment_update_cardio.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/CJJ21/Documents/FitnessFinalProject/app/src/main/res/layout/fragment_update_strength.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/CJJ21/Documents/FitnessFinalProject/app/src/main/res/layout/strength_card.xml" value="0.19791666666666666" />
       </map>
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="14" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_14_PREVIEW" project-jdk-name="14" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

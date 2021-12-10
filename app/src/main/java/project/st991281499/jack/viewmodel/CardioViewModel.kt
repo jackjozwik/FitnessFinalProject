@@ -1,27 +1,45 @@
 package project.st991281499.jack
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.asLiveData
-import androidx.lifecycle.viewModelScope
+import android.app.Application
+import androidx.lifecycle.*
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import project.st991281499.jack.data.Cardio
-import project.st991281499.jack.data.CardioDAO
+import project.st991281499.jack.data.*
+import project.st991281499.jack.repository.CardioRepository
+import project.st991281499.jack.repository.StrengthRepository
 import java.util.*
 
-class CardioViewModel(private val cardioDao: CardioDAO) : ViewModel() {
+class CardioViewModel(application: Application) : AndroidViewModel(application) {
 
-    fun addNewCardio(exerciseType: String, datetime: String, duration: String) {
-        val newCardio = getNewCardioEntry(exerciseType, datetime, duration)
-        insertCardio(newCardio)
+    val cardioDao: CardioDAO = FitnessRoomDatabase.getDatabase(application).cardioDao()
+    val repository: CardioRepository
+    val getCardio: LiveData<List<Cardio>>
+
+    init {
+        repository = CardioRepository(cardioDao)
+        getCardio = repository.readAllCardioData
     }
 
-    private fun insertCardio(cardio: Cardio) {
-        viewModelScope.launch {
-            cardioDao.insert(cardio)
+    fun readCardio(exerciseType: String) :LiveData<List<Cardio>>{
+        return repository.readData(exerciseType)
+    }
+
+    fun insertCardioEntry(cardio: Cardio){
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.addCardio(cardio)
         }
     }
+    fun updateCardioEntry(cardio: Cardio){
+        viewModelScope.launch(Dispatchers.IO){
+            repository.updateCardio(cardio)
+        }
+    }
+    fun deleteCardioEntry(cardio: Cardio){
+        viewModelScope.launch(Dispatchers.IO){
+            repository.deleteCardio(cardio)
+        }
+    }
+
 
     fun isEntryValid(exerciseType: String, datetime: String, duration: String): Boolean {
         if (exerciseType.isBlank() || datetime.isBlank() || duration.isBlank()) {
@@ -30,21 +48,4 @@ class CardioViewModel(private val cardioDao: CardioDAO) : ViewModel() {
         return true
     }
 
-    private fun getNewCardioEntry(exerciseType: String, datetime: String, duration: String): Cardio {
-        return Cardio(
-            exerciseType = exerciseType,
-            datetime = datetime,
-            duration = duration
-        )
-    }
-}
-
-class CardioViewModelFactory(private val cardioDao: CardioDAO) : ViewModelProvider.Factory {
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(CardioViewModel::class.java)) {
-            @Suppress("UNCHECKED_CAST")
-            return CardioViewModel(cardioDao) as T
-        }
-        throw IllegalArgumentException("Unknown ViewModel class")
-    }
 }
