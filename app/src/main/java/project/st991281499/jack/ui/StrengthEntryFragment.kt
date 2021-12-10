@@ -48,7 +48,7 @@ class StrengthEntryFragment : Fragment() {
     @SuppressLint("NewApi")
     private fun addNewStrength() {
         val day = binding.strDatepicker.dayOfMonth
-        val month = binding.strDatepicker.month
+        val month = binding.strDatepicker.month + 1
         val year = binding.strDatepicker.year
         val hour = binding.strTimepicker.hour
         val minute = binding.strTimepicker.minute
