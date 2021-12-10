@@ -9,8 +9,8 @@
     <string name="done">Done</string>
     <string name="reps">Reps: </string>
     <string name="update">Update</string>
-    <string name="about_desc">This application can be used to track your fitness workouts. For Cardio
-        records, users can track duration, date and time. \nFor strength records: Reps, Sets, date and time.</string>
+    <string name="about_desc">  December 10th, 2021\n\nJason Beattie 991210004 is a 3rd year SDNE student who is interested in cybersecurity.\n\nC.Jack Jozwik 991281499 is a 3rd year Systems analyst student who is also interested in cybersecurity.
+    </string>
     <string name="help_desc">
         To begin using app, select either of the two tabs at the top of the screen to select
         what kind of workout you will be focusing on. Each tab will display a list of available workouts to
