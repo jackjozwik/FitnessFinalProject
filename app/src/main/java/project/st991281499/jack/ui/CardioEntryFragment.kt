@@ -53,7 +53,7 @@ class CardioEntryFragment : Fragment() {
     @SuppressLint("NewApi")
     private fun addNewCardio() {
         val day = binding.cardioDatepicker.dayOfMonth
-        val month = binding.cardioDatepicker.month
+        val month = binding.cardioDatepicker.month + 1
         val year = binding.cardioDatepicker.year
         val hour = binding.cardioTimepicker.hour
         val minute = binding.cardioTimepicker.minute
