@@ -9,8 +9,15 @@
     <string name="done">Done</string>
     <string name="reps">Reps: </string>
     <string name="update">Update</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="about_desc">This application can be used to track your fitness workouts. For Cardio
+        records, users can track duration, date and time. \nFor strength records: Reps, Sets, date and time.</string>
+    <string name="help_desc">
+        To begin using app, select either of the two tabs at the top of the screen to select
+        what kind of workout you will be focusing on. Each tab will display a list of available workouts to
+        track.The strength tab also includes multiple choices for each target muscle area.\n\nTo add a new record,click the plus button in the bottom right hand corner of the screen and fill out all of the fields
+        and select done. To edit any records, simply select and of the items from the list and a
+        similarly page will appear to make any changes to the entry. Select Update to update the entry,
+        or delete to remove it from the database.</string>
     <string name="delete">Delete</string>
     <string name="Add">+</string>
     <string name="about">About</string>
