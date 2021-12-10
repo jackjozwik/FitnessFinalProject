@@ -1,5 +1,6 @@
 package project.st991281499.jack.data
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import kotlinx.coroutines.flow.Flow
 
@@ -7,18 +8,21 @@ import kotlinx.coroutines.flow.Flow
 interface CardioDAO {
 
     @Query("SELECT * from cardio")
-    fun getItems(): Flow<List<Cardio>>
+    fun getItems(): LiveData<List<Cardio>>
 
     @Query("SELECT * from cardio WHERE id = :id")
-    fun getItem(id: Int): Flow<Cardio>
+    fun getItem(id: Int): LiveData<Cardio>
+
+    @Query("SELECT * FROM cardio WHERE exerciseType = :selection")
+    fun getExerciseType(selection: String): LiveData<List<Cardio>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insert(cardio: Cardio)
+    fun insert(cardio: Cardio): Long
 
     @Update
-    suspend fun update(cardio: Cardio)
+    fun update(cardio: Cardio)
 
     @Delete
-    suspend fun delete(cardio: Cardio)
+    fun delete(cardio: Cardio)
 
 }

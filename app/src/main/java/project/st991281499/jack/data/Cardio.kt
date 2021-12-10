@@ -3,7 +3,7 @@ package project.st991281499.jack.data
 import androidx.room.*
 import java.util.*
 
-@Entity(tableName = "Cardio")
+@Entity
 data class Cardio (
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
